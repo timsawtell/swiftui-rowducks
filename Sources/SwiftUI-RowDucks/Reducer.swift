@@ -18,9 +18,6 @@ public protocol AsyncAction {
     var closure: (MyStore) -> Void { get set }
 }
 
-/// Used when setting up the state so that the default values are applied
-public struct InitAction: Action {}
-
 /// A `Reducer` is an individual entity that will run a function and return some state.
 /// There is usually a 1:1 relationship between each level of your `state` entity graph and
 /// a reducer.
@@ -34,9 +31,4 @@ public protocol Reducer {
     /// More often than not, the reducer will just return `state`. However when you want a change
     /// to happen, your reducer will return a new `state` based on your rules
     func reduce(state: ResponsibleData?, action: Action) -> ResponsibleData
-}
-
-/// Force the property to conform to the Equatable protocol
-@propertyDelegate struct Eqauatable<Value: Equatable> {
-    public var value: Value?
 }
