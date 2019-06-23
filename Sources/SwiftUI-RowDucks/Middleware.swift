@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol MiddlewareItem {
+public protocol MiddlewareItem {
     associatedtype ResponsibleData
     
     func observeStateChange(withBeforeState beforeState: ResponsibleData, afterState: ResponsibleData, action: Action)

@@ -9,22 +9,22 @@
 import Foundation
 
 /// Base `Action` has no members or functions
-protocol Action {
+public protocol Action {
     
 }
 
-protocol AsyncAction {
+public protocol AsyncAction {
     associatedtype MyStore
     var closure: (MyStore) -> Void { get set }
 }
 
 /// Used when setting up the state so that the default values are applied
-struct InitAction: Action {}
+public struct InitAction: Action {}
 
 /// A `Reducer` is an individual entity that will run a function and return some state.
 /// There is usually a 1:1 relationship between each level of your `state` entity graph and
 /// a reducer.
-protocol Reducer {
+public protocol Reducer {
     
     /// ResponsibleData means "What struct should I return when I run my `reduce` function
     associatedtype ResponsibleData
