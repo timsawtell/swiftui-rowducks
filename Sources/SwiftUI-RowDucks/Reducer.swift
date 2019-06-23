@@ -30,5 +30,5 @@ public protocol Reducer {
     /// the `ResponsibleData` look like (change to) based on the `action` that we're working with.
     /// More often than not, the reducer will just return `state`. However when you want a change
     /// to happen, your reducer will return a new `state` based on your rules
-    func reduce(state: ResponsibleData?, action: Action) -> ResponsibleData
+    static func reduce(state: ResponsibleData?, action: Action) -> ResponsibleData
 }
